@@ -25,5 +25,14 @@ router.post('/crear',(req,res)=>{
     });;
 });
 
+router.get('/',(req,res)=>{
+    cancion.find({},{
+    }).then(function (docs) {
+    res.status(200).json(docs)
+    }).catch(function (err) {
+    console.log(err);
+    throw err;
+    });;
+    })
 
 module.exports = router;
